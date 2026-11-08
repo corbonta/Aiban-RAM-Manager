@@ -1,26 +1,26 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+# Gradle
+.gradle/
+.kotlin/
+build/
+**/build/
+
+# Android local configuration
 local.properties
-# Local Android configuration
-/local.properties
 
 # Android build outputs
-**/build/
 captures/
 .externalNativeBuild/
 .cxx/
+*.apk
+*.aab
+output-metadata.json
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+misc.xml
+deploymentTargetDropDown.xml
+render.experimental.xml
 
 # Signing keys and secrets
 *.jks
@@ -30,19 +30,18 @@ captures/
 *.pem
 *.key
 secrets.properties
+google-services.json
 
-# IDE
-.idea/
-*.iml
+# Profiling and logs
+*.hprof
+*.log
 
 # Backups
 /backups/
+*.backup
+*.before_*
+*.bak
 
 # OS files
 .DS_Store
 Thumbs.db
-
-# Temporary source backups
-*.backup
-*.before_*
-*.bak
