@@ -1,6 +1,7 @@
 package com.example.aiban_rammanager.ui
 
 import android.content.Context
+import androidx.core.content.edit
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -60,14 +61,14 @@ class StatsRepository(context: Context) {
                 )
             }
 
-            prefs.edit().putString("samples", array.toString()).apply()
+            prefs.edit { putString("samples", array.toString()) }
             cache = samples
         }
     }
 
     fun clear() {
         synchronized(lock) {
-            prefs.edit().remove("samples").apply()
+            prefs.edit { remove("samples") }
             cache = emptyList()
         }
     }

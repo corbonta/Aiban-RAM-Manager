@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
+import androidx.core.content.edit
 
 /** Индивидуальный профиль игры. */
 data class GameProfile(
@@ -37,7 +38,7 @@ class AppSettings(context: Context) {
         set(value) {
             val safe = value.coerceIn(1, 60)
             refreshSecState.intValue = safe
-            prefs.edit().putInt("refresh_sec", safe).apply()
+            prefs.edit { putInt("refresh_sec", safe) }
         }
 
     var keepScreenOn: Boolean
@@ -60,7 +61,7 @@ class AppSettings(context: Context) {
 
     private fun setBool(state: MutableState<Boolean>, key: String, value: Boolean) {
         state.value = value
-        prefs.edit().putBoolean(key, value).apply()
+        prefs.edit { putBoolean(key, value) }
     }
 
     /**
@@ -70,7 +71,7 @@ class AppSettings(context: Context) {
     var frozenByUs: Set<String>
         get() = prefs.getStringSet("frozen_by_us", emptySet())?.toSet() ?: emptySet()
         set(value) {
-            prefs.edit().putStringSet("frozen_by_us", HashSet(value)).apply()
+            prefs.edit { putStringSet("frozen_by_us", HashSet(value)) }
         }
 
     // ---------- Game Booster ----------
@@ -78,14 +79,14 @@ class AppSettings(context: Context) {
     var selectedGamePackage: String
         get() = prefs.getString("selected_game_package", "") ?: ""
         set(value) {
-            prefs.edit().putString("selected_game_package", value).apply()
+            prefs.edit { putString("selected_game_package", value) }
         }
 
     /** Режим «Не беспокоить», который был до запуска игры (DND_NOT_SET, если мы его не меняли). */
     var dndPrevFilter: Int
         get() = prefs.getInt("dnd_prev_filter", DND_NOT_SET)
         set(value) {
-            prefs.edit().putInt("dnd_prev_filter", value).apply()
+            prefs.edit { putInt("dnd_prev_filter", value) }
         }
 
     private fun profileKey(packageName: String, name: String): String {
@@ -106,12 +107,12 @@ class AppSettings(context: Context) {
     }
 
     fun saveGameProfile(packageName: String, profile: GameProfile) {
-        prefs.edit()
-            .putBoolean(profileKey(packageName, "cleanup"), profile.cleanup)
-            .putBoolean(profileKey(packageName, "auto"), profile.autoLaunch)
-            .putBoolean(profileKey(packageName, "monitor"), profile.monitor)
-            .putBoolean(profileKey(packageName, "dnd"), profile.dnd)
-            .apply()
+        prefs.edit {
+            putBoolean(profileKey(packageName, "cleanup"), profile.cleanup)
+            putBoolean(profileKey(packageName, "auto"), profile.autoLaunch)
+            putBoolean(profileKey(packageName, "monitor"), profile.monitor)
+            putBoolean(profileKey(packageName, "dnd"), profile.dnd)
+        }
     }
 
     companion object {

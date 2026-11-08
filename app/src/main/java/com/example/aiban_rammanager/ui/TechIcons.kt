@@ -32,7 +32,7 @@ val ClaudeOrange = Color(0xFFD97757)
 
 /** Лучистая звезда в стиле значка Claude. */
 @Composable
-fun ClaudeIcon(modifier: Modifier = Modifier.size(32.dp), tint: Color = ClaudeOrange) {
+fun ClaudeIcon(modifier: Modifier, tint: Color = ClaudeOrange) {
     Canvas(modifier = modifier) {
         val r = size.minDimension / 2f
         val rays = 12
@@ -61,7 +61,7 @@ fun ClaudeIcon(modifier: Modifier = Modifier.size(32.dp), tint: Color = ClaudeOr
 
 /** Значок Kotlin: квадрат с вырезом справа и градиентом. */
 @Composable
-fun KotlinIcon(modifier: Modifier = Modifier.size(32.dp)) {
+fun KotlinIcon(modifier: Modifier) {
     Canvas(modifier = modifier) {
         val w = size.width
         val h = size.height
@@ -92,7 +92,7 @@ fun KotlinIcon(modifier: Modifier = Modifier.size(32.dp)) {
 
 /** Чашка кофе с паром, как у значка Java. */
 @Composable
-fun JavaIcon(modifier: Modifier = Modifier.size(32.dp)) {
+fun JavaIcon(modifier: Modifier) {
     val cupBlue = Color(0xFF5382A1)
     val steamRed = Color(0xFFE76F00)
 
@@ -147,7 +147,7 @@ fun JavaIcon(modifier: Modifier = Modifier.size(32.dp)) {
 
 /** Логотип Aiban-RM: кольцо загрузки памяти и буквы RM. */
 @Composable
-fun AppLogo(modifier: Modifier = Modifier.size(88.dp)) {
+fun AppLogo(modifier: Modifier) {
     Box(
         modifier = modifier
             .clip(RoundedCornerShape(26.dp))

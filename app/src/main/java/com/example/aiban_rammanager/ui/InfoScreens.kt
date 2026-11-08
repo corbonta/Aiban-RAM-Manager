@@ -5,6 +5,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import androidx.core.net.toUri
 import android.os.Build
 import android.widget.Toast
 import androidx.compose.foundation.background
@@ -62,7 +63,7 @@ private fun appVersion(context: Context): String = try {
 private fun openLink(context: Context, url: String) {
     try {
         context.startActivity(
-            Intent(Intent.ACTION_VIEW, Uri.parse(url)).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            Intent(Intent.ACTION_VIEW, url.toUri()).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         )
     } catch (_: Exception) {
         Toast.makeText(context, "Не удалось открыть ссылку", Toast.LENGTH_SHORT).show()
@@ -71,7 +72,7 @@ private fun openLink(context: Context, url: String) {
 
 private fun sendMail(context: Context, subject: String) {
     try {
-        val uri = Uri.parse("mailto:${AppInfo.EMAIL}?subject=${Uri.encode(subject)}")
+        val uri = "mailto:${AppInfo.EMAIL}?subject=${Uri.encode(subject)}".toUri()
         context.startActivity(Intent(Intent.ACTION_SENDTO, uri).addFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
     } catch (_: Exception) {
         Toast.makeText(context, "Не найдено приложение для почты", Toast.LENGTH_SHORT).show()
