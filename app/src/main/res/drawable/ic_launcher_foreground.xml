@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Всё нарисовано внутри безопасной зоны, чтобы маска иконки ничего не обрезала -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.82"
+        android:scaleY="0.82">
+
+        <!-- Мягкое зелёное свечение за глазом -->
+        <path android:pathData="M16,56a38,38 0 1,0 76,0a38,38 0 1,0 -76,0z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="54"
+                    android:centerY="56"
+                    android:gradientRadius="38"
+                    android:startColor="#5500E676"
+                    android:endColor="#0000E676" />
+            </aapt:attr>
+        </path>
+
+        <!-- Перья над бровью -->
+        <path
+            android:fillColor="#6B4528"
+            android:pathData="M31,38L29,22L45,35Z" />
+        <path
+            android:fillColor="#6B4528"
+            android:pathData="M45,36L50,18L60,36Z" />
+        <path
+            android:fillColor="#6B4528"
+            android:pathData="M60,37L69,23L76,40Z" />
+
+        <!-- Белок глаза -->
+        <path
+            android:fillColor="#FFF4D6"
+            android:pathData="M28,58a26,21 0 1,0 52,0a26,21 0 1,0 -52,0z"
+            android:strokeColor="#1A1210"
+            android:strokeLineJoin="round"
+            android:strokeWidth="3" />
+
+        <!-- Радужка: жёлто-оранжевый градиент, как у орла -->
+        <path
+            android:pathData="M44,59a14,14 0 1,0 28,0a14,14 0 1,0 -28,0z"
+            android:strokeColor="#B85C00"
+            android:strokeWidth="1.6">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:type="radial"
+                    android:centerX="58"
+                    android:centerY="59"
+                    android:gradientRadius="14"
+                    android:startColor="#FFE066"
+                    android:endColor="#F08A00" />
+            </aapt:attr>
+        </path>
+
+        <!-- Зрачок -->
+        <path
+            android:fillColor="#0A0A0A"
+            android:pathData="M51,59a7,7 0 1,0 14,0a7,7 0 1,0 -14,0z" />
+
+        <!-- Блики -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M51.4,55a2.6,2.6 0 1,0 5.2,0a2.6,2.6 0 1,0 -5.2,0z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:fillAlpha="0.85"
+            android:pathData="M61.6,63a1.4,1.4 0 1,0 2.8,0a1.4,1.4 0 1,0 -2.8,0z" />
+
+        <!-- Тяжёлая сердитая бровь, наклонена вниз к клюву -->
+        <path
+            android:fillColor="#1A1210"
+            android:pathData="M21,41Q46,28 91,43L89,58Q55,50 21,41Z"
+            android:strokeColor="#1A1210"
+            android:strokeLineJoin="round"
+            android:strokeWidth="4" />
+
+        <!-- Светлая кромка на брови -->
+        <path
+            android:pathData="M28,38.5Q50,31.5 84,44.5"
+            android:strokeColor="#4A3322"
+            android:strokeLineCap="round"
+            android:strokeWidth="1.6" />
+    </group>
+</vector>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Тёмный цвет запуска: совпадает с анимацией внутри приложения -->
+    <color name="aiban_launch_bg">#FF070A08</color>
+
+    <!--
+        Тема только для экрана запуска. На Android 12 и новее системная заставка
+        показывает глаз орла на тёмном фоне, на старых версиях просто тёмный фон
+        вместо белой вспышки. Родитель берётся из имени: Theme.Aiban_RamManager.
+    -->
+    <style name="Theme.Aiban_RamManager.Launch">
+        <item name="android:windowBackground">@color/aiban_launch_bg</item>
+        <item name="android:windowSplashScreenBackground">@color/aiban_launch_bg</item>
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+    </style>
+
+</resources>

@@ -1,0 +1,48 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# Local Android configuration
+/local.properties
+
+# Android build outputs
+**/build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing keys and secrets
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+secrets.properties
+
+# IDE
+.idea/
+*.iml
+
+# Backups
+/backups/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary source backups
+*.backup
+*.before_*
+*.bak
